@@ -1,4 +1,4 @@
-# Estudos Rafa — Trilha de Data Science
+# Estudos Rapha — Trilha de Data Science
 
 Exercícios práticos de Python para Dados, Estatística e Ciência de Dados.
 Todos os exercícios usam um dataset fictício de imóveis no Distrito Federal.
