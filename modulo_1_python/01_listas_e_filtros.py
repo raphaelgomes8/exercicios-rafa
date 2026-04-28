@@ -45,8 +45,14 @@ resultado_f2 = None  # deve ser uma lista de strings
 # Filtre apenas os imóveis do tipo "apartamento".
 # Retorne a lista de dicionários filtrada.
 # ----------------------------------------------------------
-# TODO: seu código aqui
-resultado_f3 = None  # deve ser uma lista de dicionários
+Respostas:
+ls = []
+
+for apt in dados:
+    apt_tipo = apt["tipo"]
+    if apt_tipo == "apartamento":
+        ls.append(apt)
+resultado_f3 = ls
 
 
 # ----------------------------------------------------------
