@@ -45,8 +45,13 @@ resultado_f2 = None  # deve ser uma lista de strings
 # Filtre apenas os imóveis do tipo "apartamento".
 # Retorne a lista de dicionários filtrada.
 # ----------------------------------------------------------
-# TODO: seu código aqui
-resultado_f3 = None  # deve ser uma lista de dicionários
+ls = []
+
+for apt in dados:
+    apt_tipo = apt["tipo"]
+    if apt_tipo == "apartamento":
+        ls.append(apt)
+resultado_f3 = ls
 
 
 # ----------------------------------------------------------
@@ -54,8 +59,13 @@ resultado_f3 = None  # deve ser uma lista de dicionários
 # Qual é o imóvel mais caro do dataset?
 # Retorne o dicionário completo do imóvel.
 # ----------------------------------------------------------
-# TODO: seu código aqui
-resultado_f4 = None  # deve ser um dicionário
+apt_caro = dados[0]
+
+for apt in dados:
+    if apt["preco"] > apt_caro["preco"]:
+        apt_caro = apt
+    
+resultado_f4 = apt_caro
 
 
 # ----------------------------------------------------------
@@ -63,8 +73,16 @@ resultado_f4 = None  # deve ser um dicionário
 # Quantas garagens existem no total somando todos os imóveis?
 # Ignore imóveis com o campo garagens vazio.
 # ----------------------------------------------------------
-# TODO: seu código aqui
-resultado_f5 = None  # deve ser um int
+ls = []
+
+for apt in dados: 
+    g_ = apt["garagens"] 
+    if g_ != "":
+        g1 = int(apt["garagens"])
+        ls.append(g1)
+g = sum(ls)
+print(g)
+resultado_f5 = g
 
 
 # ----------------------------------------------------------
@@ -73,8 +91,18 @@ resultado_f5 = None  # deve ser um int
 # R$ 500.000. Retorne a lista de dicionários.
 # Ignore imóveis com area_m2 que contenha letras (ex: "75 m²").
 # ----------------------------------------------------------
-# TODO: seu código aqui
-resultado_m1 = None
+ls = []
+
+for apt in dados:
+    apt_preco = float(apt["preco"])
+    apt_a = apt["area_m2"]
+    if "m²" not in apt_a:
+        apt_area = float(apt_a)
+        if apt_preco < 500000 and apt_area > 80:
+            ls.append(apt)
+
+
+resultado_m1 = ls
 
 
 # ----------------------------------------------------------
