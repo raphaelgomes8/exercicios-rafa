@@ -45,8 +45,13 @@ resultado_f2 = None  # deve ser uma lista de strings
 # Filtre apenas os imóveis do tipo "apartamento".
 # Retorne a lista de dicionários filtrada.
 # ----------------------------------------------------------
-# TODO: seu código aqui
-resultado_f3 = None  # deve ser uma lista de dicionários
+ls = []
+
+for apt in dados:
+    apt_tipo = apt["tipo"]
+    if apt_tipo == "apartamento":
+        ls.append(apt)
+resultado_f3 = ls
 
 
 # ----------------------------------------------------------
@@ -54,8 +59,13 @@ resultado_f3 = None  # deve ser uma lista de dicionários
 # Qual é o imóvel mais caro do dataset?
 # Retorne o dicionário completo do imóvel.
 # ----------------------------------------------------------
-# TODO: seu código aqui
-resultado_f4 = None  # deve ser um dicionário
+apt_caro = dados[0]
+
+for apt in dados:
+    if apt["preco"] > apt_caro["preco"]:
+        apt_caro = apt
+    
+resultado_f4 = apt_caro
 
 
 # ----------------------------------------------------------
